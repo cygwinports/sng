@@ -1,0 +1,6 @@
+DESCRIPTION="Scriptable Network Graphics interpreter"
+HOMEPAGE="http://sng.sourceforge.net/"
+SRC_URI=mirror://sourceforge/${PN}/${P}.tar.gz
+
+CYGCONF_ARGS="--with-rgbtxt=/usr/share/X11/rgb.txt"
+DOCS="test.sng"
