@@ -1,6 +1,6 @@
 NAME="sng"
-VERSION=1.0.5
-RELEASE=2
+VERSION=1.0.6
+RELEASE=1
 CATEGORY="Graphics"
 SUMMARY="PNG markup language"
 DESCRIPTION="SNG (Scriptable Network Graphics) is a minilanguage designed
@@ -11,18 +11,12 @@ only text tools."
 REQUIRES="rgb"
 HOMEPAGE="http://sng.sourceforge.net/"
 SRC_URI="mirror://sourceforge/sng/sng-${VERSION}.tar.gz"
-
-# sng uses libpng's internal structures, which are not exported in libpng14+
-SRC_URI+="
-    https://sourceforge.net/p/libpng/code/ci/libpng15/tree/pngdebug.h?format=raw
-    https://sourceforge.net/p/libpng/code/ci/libpng15/tree/pnginfo.h?format=raw
-    https://sourceforge.net/p/libpng/code/ci/libpng15/tree/pngpriv.h?format=raw
-    https://sourceforge.net/p/libpng/code/ci/libpng15/tree/pngstruct.h?format=raw
-"
 PATCH_URI="
-    http://svnweb.freebsd.org/ports/head/graphics/sng/files/patch-sngc.c?view=co
-    http://svnweb.freebsd.org/ports/head/graphics/sng/files/patch-sngd.c?view=co
+	1.0.6-cygwin-includes.patch
+	1.0.6-libpng12.patch
 "
 
-CYGCONF_ARGS="--with-rgbtxt=/usr/share/X11/rgb.txt"
+DISTCLEANFILES="Makefile"
+
+CYGCONF_ARGS="--with-png-inc=/usr/include/libpng12 --with-rgbtxt=/usr/share/X11/rgb.txt"
 DOCS="test.sng"

@@ -1,0 +1,14 @@
+--- origsrc/sng-1.0.6/configure.ac	2014-06-04 07:40:09.000000000 -0500
++++ src/sng-1.0.6/configure.ac	2015-02-11 18:47:21.626563100 -0600
+@@ -29,9 +29,9 @@ AC_ARG_WITH(rgbtxt, [  --with-rgbtxt=DIR
+ 
+ AC_CHECK_LIB(z, deflate)
+ AC_CHECK_LIB(m, pow)
+-AC_CHECK_LIB(png, png_get_io_ptr, , , $LIBS)
++AC_CHECK_LIB(png12, png_get_io_ptr, , , $LIBS)
+ 
+-if test "$ac_cv_lib_png_png_write_init" = "no"
++if test "$ac_cv_lib_png12_png_write_init" = "no"
+ then
+     AC_ERROR([PNG library is missing! Please get it.])
+ fi

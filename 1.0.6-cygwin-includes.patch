@@ -1,0 +1,10 @@
+--- origsrc/sng-1.0.6/main.c	2011-06-15 13:57:56.000000000 -0500
++++ src/sng-1.0.6/main.c	2015-02-11 16:59:18.669403000 -0600
+@@ -2,6 +2,7 @@
+ #include <stdio.h>
+ #include <stdarg.h>
+ #include <stdlib.h>
++#include <string.h>
+ #include <ctype.h>
+ #include <unistd.h>
+ #include "png.h"
